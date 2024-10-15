@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %} Predict {% endblock %}
+{% block body %}
+<section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+      <div class="flex mx-auto flex-wrap mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">DeepFake Detection</h1>
+      </div>
+      <video class="xl:w-1/2 lg:w-1/2 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded" autoplay controls>
+        <source src="{{ path }}" type="video/mp4">
+      </video>
+      <div class="flex flex-col text-center w-full">
+        <h1 class="text-xl font-medium title-font mb-4 text-white">Detection Status</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">The Video is: <b class="text-white">{{ status }}</b></p>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Fake Score: <b class="text-white">~{{ accuracy }}%</b></p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

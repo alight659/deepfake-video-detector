@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<section class="text-gray-400 bg-gray-900 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">DeepFakes Detector</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Upload a Video to Get Started.</p>
+    </div>
+    <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4sm:space-y-0 space-y-4">
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="video" class="leading-7 text-sm text-gray-400">Video File
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="text-white bg-gray-800 bg-opacity-40 border-0">
+              <input type="file" name="video" id="video" class="flex text-white py-2 px-2 focus:outline-none hover:bg-gray-800 hover:bg-opacity-80 rounded" accept=".mp4" required></label>
+            </div>
+          </div>
+          <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 roundedtext-lg" type="submit">Check</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
