@@ -11,8 +11,12 @@
       </video>
       <div class="flex flex-col text-center w-full">
         <h1 class="text-xl font-medium title-font mb-4 text-white">Detection Status</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">The Video is: <b class="text-white">{{ status }}</b></p>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Fake Score: <b class="text-white">~{{ accuracy }}%</b></p>
+        {% if accuracy %}
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">The Video is: <b class="text-white">{{ status }}</b></p>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Fake Score: <b class="text-white">~{{ accuracy }}%</b></p>
+        {% else %}
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base"><b class="text-white">{{ status }}</b></p>
+        {% endif %}
       </div>
     </div>
   </section>

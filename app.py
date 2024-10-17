@@ -76,8 +76,11 @@ def model_predict():
         video.save(filepath)
 
         s = predictor(filepath)
-    
-        return render_template("predict.html", accuracy=round(s[0][1] * 100), status=s[1], path=url_for('uploaded_file', filename=filename))
+        
+        if s[0] > 0:
+            return render_template("predict.html", accuracy=round(s[0] * 100), status=s[1], path=url_for('uploaded_file', filename=filename))
+        else:
+            return render_template("predict.html", status=s[1], path=url_for('uploaded_file', filename=filename))
 
     return render_template("predict.html")
 
